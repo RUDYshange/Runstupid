@@ -1,0 +1,9 @@
+
+{
+  "name": "Run Stupid",
+  "description": "The elite social feed for people who run far, run fast, and run stupid. Includes AI coaching and live route tracking.",
+  "requestFramePermissions": [
+    "camera",
+    "geolocation"
+  ]
+}

@@ -1,0 +1,91 @@
+
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="theme-color" content="#0a0a0a">
+  <link rel="manifest" href="manifest.json">
+  <link rel="apple-touch-icon" href="https://api.a0.dev/assets/image?text=Run%20Stupid%20Purple%20Logo&aspect=1:1">
+  <title>Run Stupid</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&family=Lexend:wght@100..900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "stupid-purple": "#A800FF",
+            "stupid-neon": "#CCFF00",
+            "stupid-black": "#0a0a0a",
+            "stupid-gray": "#1a1a1a",
+            "stupid-card": "#121212",
+          },
+          fontFamily: {
+            "display": ["Space Grotesk", "sans-serif"],
+            "sans": ["Lexend", "sans-serif"]
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      font-family: 'Lexend', sans-serif;
+      -webkit-tap-highlight-color: transparent;
+      user-select: none;
+      background-color: #0a0a0a;
+      color: white;
+      overscroll-behavior-y: contain;
+      touch-action: manipulation;
+    }
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    
+    @keyframes pulse-soft {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.7; }
+    }
+    .animate-pulse-soft { animation: pulse-soft 2s infinite ease-in-out; }
+    
+    .glass {
+      background: rgba(18, 18, 18, 0.85);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+    }
+
+    /* Fix for iOS bottom bar and header safe areas */
+    /* nav height is now content-driven (no fixed h-32). Safe-area handled via utility class. */
+    .nav-safe-bottom { padding-bottom: calc(0.875rem + env(safe-area-inset-bottom)); }
+    .pt-safe-overlay { padding-top: calc(1.25rem + env(safe-area-inset-top)); }
+    header { padding-top: calc(1.25rem + env(safe-area-inset-top)); padding-bottom: 1.25rem; }
+    .pb-safe { padding-bottom: env(safe-area-inset-bottom); }
+    .pt-safe { padding-top: env(safe-area-inset-top); }
+
+    /* Custom scrollbar for desktop preview while keeping mobile clean */
+    @media (min-width: 640px) {
+      .no-scrollbar::-webkit-scrollbar { display: block; width: 4px; }
+      .no-scrollbar::-webkit-scrollbar-thumb { background: #A800FF; border-radius: 10px; }
+    }
+  </style>
+  <script type="importmap">
+  {
+    "imports": {
+      "@google/genai": "https://esm.sh/@google/genai@^1.40.0",
+      "react/": "https://esm.sh/react@^19.2.4/",
+      "react": "https://esm.sh/react@^19.2.4",
+      "react-dom/": "https://esm.sh/react-dom@^19.2.4/"
+    }
+  }
+  </script>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body class="bg-stupid-black overflow-hidden">
+  <div id="root" class="h-full"></div>
+<script type="module" src="/index.tsx"></script>
+</body>
+</html>
