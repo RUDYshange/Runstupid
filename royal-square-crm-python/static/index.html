@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en-ZA">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Royal Square Financial — Client Manager</title>
+<meta name="description" content="Royal Square Financial — FAIS-licensed client manager for 29370">
+<meta name="theme-color" content="#0F1626">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Serif:wght@400;500;600&display=swap" rel="stylesheet">
+<!-- Order matters: tokens define the variables that app.css consumes. -->
+<link rel="stylesheet" href="/css/tokens.css">
+<link rel="stylesheet" href="/css/app.css">
+</head>
+<body>
+<div class="app">
+  <aside class="rail">
+    <div class="brand">
+      <div class="mark"><i></i><i></i><i></i><i></i></div>
+      <h1>Royal Square Financial</h1>
+      <p>FSP 29370</p>
+    </div>
+    <nav class="nav" id="nav"></nav>
+    <div class="adviser">
+      <div class="sq" id="adviserInitials">QN</div>
+      <div><b id="adviserName">Qiniso Ntuli</b><span>Key individual</span></div>
+    </div>
+  </aside>
+  <div class="main">
+    <div class="topbar">
+      <div class="search">
+        <span class="glyph">⌕</span>
+        <input id="q" type="search" placeholder="Search clients, policies, claim numbers" autocomplete="off">
+      </div>
+      <div class="spacer"></div>
+      <button class="btn" id="btnClaim">Log a claim</button>
+      <button class="btn btn-primary" id="btnClient">Add client</button>
+    </div>
+    <main class="view" id="view"></main>
+  </div>
+</div>
+
+<!-- Plain ES modules, no build step. The browser resolves the imports. -->
+<script type="module" src="/js/app.js"></script>
+</body>
+</html>
